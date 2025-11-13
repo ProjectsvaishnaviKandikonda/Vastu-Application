@@ -1,9 +1,31 @@
 import streamlit as st
+import subprocess
+import sys
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
 import plotly.graph_objects as go
 from Data import telugu_letters, mul, div, CSUB, CVFMAE, meaning_map
+
+# List of required packages with versions
+required_packages = [
+    "streamlit==1.25.0",
+    "pandas==2.1.1",
+    "numpy==1.26.4",
+    "matplotlib==3.8.1",
+    "plotly==5.18.0"
+]
+
+# Function to install missing packages
+def install_packages(packages):
+    for package in packages:
+        try:
+            __import__(package.split("==")[0])
+        except ImportError:
+            print(f"Installing {package}...")
+            subprocess.check_call([sys.executable, "-m", "pip", "install", package])
+
+install_packages(required_packages)
 
 # -----------------------------
 # Page Config
