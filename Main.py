@@ -3,11 +3,13 @@ import pandas as pd
 import plotly.graph_objects as go
 from Data import (
     telugu_letters, mul, div, CSUB, CVFMAE, meaning_map,
-    letter_range_rashi_dynamic, good_areas
+    good_areas, letter_range_rashi_dynamic
 )
 from style import load_custom_styles
 
+# -----------------------------
 # Load custom CSS styles
+# -----------------------------
 load_custom_styles()
 
 # -----------------------------
@@ -94,31 +96,32 @@ def create_radar_chart_plotly(vastu_results):
     return fig
 
 def get_letter_group_info(selected_letter):
-    """Returns letters, Rashi, and Nakshatram for the selected letter."""
+    """
+    Returns letters grouped together, with their Rashi and Nakshatram
+    """
     if selected_letter not in letter_range_rashi_dynamic:
         return []
 
-    letter_groups_info = []
-    rashi_groups = [k for k in letter_range_rashi_dynamic[selected_letter] if k != 'Nakshatram']
-    for group_name in rashi_groups:
-        letters = letter_range_rashi_dynamic[selected_letter][group_name]
-        nakshatram = letter_range_rashi_dynamic[selected_letter]['Nakshatram'][group_name]
-        letter_groups_info.append({
-            "Letters": ", ".join(letters),
-            "Rashi": group_name,
-            "Nakshatram": nakshatram
+    result = []
+    groups = letter_range_rashi_dynamic[selected_letter]
+
+    for group in groups:
+        result.append({
+            "Letters": ", ".join(group["Letters"]),
+            "Rashi": group["Rashi"],
+            "Nakshatram": group["Nakshatram"]
         })
-    return letter_groups_info
+    return result
 
 # -----------------------------
 # Input Section
 # -----------------------------
 with st.form("input_form"):
-    c1, c2, c3, c4 = st.columns([1, 1, 1, 1])
+    c1, c2, c3, c4 = st.columns([1,1,1,1])
     with c1:
         village_letter = st.selectbox("🏡 గ్రామం మొదటి అక్షరం", list(telugu_letters.keys()))
     with c2:
-        person_letter = st.selectbox("👤 వ్యక్తి పేరు మొదటి అక్షరం", list(telugu_letters.keys()))
+        person_letter = st.selectbox("👤 వ్యక్తి పేరు మొదటి అక్షరం", list(letter_range_rashi_dynamic.keys()))
     with c3:
         area = st.number_input("📏 స్థల పరిమాణం (sq. ft)", min_value=1, step=1)
     with c4:
@@ -162,7 +165,6 @@ if calc:
 
     # 4️⃣ Vastu Results Table + Radar Chart
     col_vastu_table, col_radar = st.columns([3, 2])
-
     vastu_results = calculate_vastu(area)
     vastu_items = []
 
@@ -170,7 +172,6 @@ if calc:
         val = vastu_results[key]
         meaning = meaning_map.get(key, {}).get(val, "—")
         verdict = "మంచిదికాదు" if "మంచిదికాదు" in meaning else ("మంచిది" if "మంచిది" in meaning else "-")
-
         vastu_items.append({
             "Vastu Item": key.capitalize(),
             "Value": val,
@@ -179,7 +180,6 @@ if calc:
         })
 
     vastu_df = pd.DataFrame(vastu_items)
-
     with col_vastu_table:
         st.subheader("స్థల పరిమాణానికి సంబంధించిన వాస్తు ఫలితాలు")
         st.dataframe(vastu_df.style.apply(style_vastu, axis=1))
