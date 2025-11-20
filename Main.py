@@ -149,7 +149,7 @@ if calc:
 
     st.subheader("స్థల విలువలు – ధనం & వ్యయం (గ్రామం & పేరుల ఆధారంగా)")
     table_df = pd.DataFrame({
-        "Item": ["Money Value", "Expense Value"],
+        "Item": ["ధనం", "వ్యయం"],
         "Value": [Money_Value, Expense_Value]
     })
     st.table(table_df)
