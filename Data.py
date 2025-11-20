@@ -45,28 +45,86 @@ letter_variations = {
 
 # Letter ranges mapping for 'క' to Rashi/Nakshatram
 letter_range_rashi_dynamic = {
-    'క': {
-        'Aurora': ['క', 'కె', 'కే', 'కై', 'కొ'],
-        'Arundatu': ['కా', 'కి', 'కీ'],
-        'Methuna': ['కు', 'కూ', 'కృ', 'కో', 'కౌ'],
-        'Nakshatram': {  # Add Nakshatram mapping
-            'Aurora': 'Ashwini',
-            'Arundatu': 'Ashlesha',
-            'Methuna': 'Magha'
-        }
-    },
-    'ఖ': {
-        'Aurora': ['ఖ', 'ఖె', 'ఖే', 'ఖై', 'ఖొ'],
-        'Arundatu': ['ఖా', 'ఖి', 'ఖీ'],
-        'Methuna': ['ఖు', 'ఖూ', 'ఖృ', 'ఖో', 'ఖౌ'],
-        'Nakshatram': {
-            'Aurora': 'Bharani',
-            'Arundatu': 'Krittika',
-            'Methuna': 'Rohini'
-        }
-    }
-}
+    # Vowels – Mesha (Aries)
+    "అ": [{"Letters": ["అ"], "Rashi": "Mesha (Aries)", "Nakshatram": "Krittika (1st padam)"}],
+    "ఇ": [{"Letters": ["ఇ"], "Rashi": "Mesha (Aries)", "Nakshatram": "Krittika (1st padam)"}],
+    "ఉ": [{"Letters": ["ఉ"], "Rashi": "Mesha (Aries)", "Nakshatram": "Krittika (1st padam)"}],
+    "ఏ": [{"Letters": ["ఏ"], "Rashi": "Mesha (Aries)", "Nakshatram": "Krittika (1st padam)"}],
+    "ఓ": [{"Letters": ["ఓ"], "Rashi": "Mesha (Aries)", "Nakshatram": "Krittika (1st padam)"}],
 
+    # Consonants – Mesha (Aries)
+    "చ": [{"Letters": ["చు", "చె", "చో"], "Rashi": "Mesha (Aries)", "Nakshatram": "Ashwini"}],
+    "ల": [{"Letters": ["లా", "లి", "లూ", "లే", "లో"], "Rashi": "Mesha (Aries)", "Nakshatram": "Bharani"}],
+
+    # Vrishabha (Taurus)
+    "వ": [
+        {"Letters": ["వొ", "వా", "వి", "వు"], "Rashi": "Vrishabha (Taurus)", "Nakshatram": "Rohini"},
+        {"Letters": ["వే", "వో"], "Rashi": "Vrishabha (Taurus)", "Nakshatram": "Mrigasira (1–2 padams)"}
+    ],
+
+    # Mithuna (Gemini)
+    "క": [
+        {"Letters": ["కా", "కి"], "Rashi": "Mithuna (Gemini)", "Nakshatram": "Mrigasira (3–4 padams)"},
+        {"Letters": ["కూ"], "Rashi": "Mithuna (Gemini)", "Nakshatram": "Arudra"},
+        {"Letters": ["కె", "కో"], "Rashi": "Mithuna (Gemini)", "Nakshatram": "Punarvasu (1–3 padams)"},
+                ],
+    "ఖ": [{"Letters": ["ఖా", "ఖి", "ఖీ"], "Rashi": "Mithuna (Gemini)", "Nakshatram": "Arudra"}],
+    "గ": [
+        {"Letters": ["గా", "గి", "గీ"], "Rashi": "Kumbha (Aquarius)", "Nakshatram": "Dhanishta (1–2 padams)"},
+        {"Letters": ["గు"], "Rashi": "Kumbha (Aquarius)", "Nakshatram": "Dhanishta (3–4 padams)"},
+        {"Letters": ["గే", "గో"], "Rashi": "Makara (Capricorn)", "Nakshatram": "Dhanishta (1–2 padams)"}
+    ],
+    "ఘ": [{"Letters": ["ఘా", "ఘి", "ఘీ"], "Rashi": "Mithuna (Gemini)", "Nakshatram": "Arudra"}],
+
+    # Simha (Leo)
+    "మ": [{"Letters": ["మా", "మీ", "మూ", "మే"], "Rashi": "Simha (Leo)", "Nakshatram": "Magha"}],
+    "ట": [{"Letters": ["టే", "టో"], "Rashi": "Simha (Leo)", "Nakshatram": "Purva Phalguni"}],
+    "ప": [{"Letters": ["పా", "పి"], "Rashi": "Simha (Leo)", "Nakshatram": "Purva Phalguni"}],
+    "పీ": [{"Letters": ["పీ", "పూ"], "Rashi": "Kanya (Virgo)", "Nakshatram": "Uttara Phalguni"}],
+
+    # Kanya (Virgo)
+    "ర": [
+        {"Letters": ["రా", "రి", "రు", "రే"], "Rashi": "Kanya (Virgo)", "Nakshatram": "Hasta"},
+        {"Letters": ["రో"], "Rashi": "Kanya (Virgo)", "Nakshatram": "Chitra (1st padam)"}
+    ],
+
+    # Tula (Libra)
+    "టి": [{"Letters": ["టి", "టూ", "టే"], "Rashi": "Tula (Libra)", "Nakshatram": "Chitra (3 padams)"}],
+    "త": [{"Letters": ["తా", "తి", "తు", "తే"], "Rashi": "Tula (Libra)", "Nakshatram": "Swati"}],
+    "తె": [{"Letters": ["తె", "తో"], "Rashi": "Tula (Libra)", "Nakshatram": "Visakha (1–2 padams)"}],
+
+    # Vrischika (Scorpio)
+    "న": [
+        {"Letters": ["న", "ని", "నూ", "నే"], "Rashi": "Vrischika (Scorpio)", "Nakshatram": "Anuradha"},
+        {"Letters": ["నో"], "Rashi": "Vrischika (Scorpio)", "Nakshatram": "Jyeshta"}
+    ],
+    "య": [
+        {"Letters": ["యా", "యి", "యు"], "Rashi": "Vrischika (Scorpio)", "Nakshatram": "Jyeshta"},
+        {"Letters": ["యే", "యో", "బ"], "Rashi": "Dhanus (Sagittarius)", "Nakshatram": "Moola"}
+    ],
+
+    # Dhanus (Sagittarius)
+    "భ": [{"Letters": ["భా", "భి", "భు"], "Rashi": "Dhanus (Sagittarius)", "Nakshatram": "Purvashada"}],
+    "ధ": [{"Letters": ["ధే", "ధో"], "Rashi": "Dhanus (Sagittarius) / Makara (Capricorn)", "Nakshatram": "Uttarashada (1st / 3rd padam)"}],
+
+    # Makara (Capricorn)
+    "ఫ": [{"Letters": ["ఫ"], "Rashi": "Makara (Capricorn)", "Nakshatram": "Uttarashada (3 padams)"}],
+    "థ": [{"Letters": ["థా", "థి", "థు"], "Rashi": "Makara (Capricorn)", "Nakshatram": "Shravana"}],
+
+    # Kumbha (Aquarius)
+    "స": [{"Letters": ["స"], "Rashi": "Kumbha (Aquarius)", "Nakshatram": "Shatabhisha"}],
+    "సి": [{"Letters": ["సి", "సు", "సే"], "Rashi": "Kumbha (Aquarius)", "Nakshatram": "Purvabhadra (1–2 padams)"}],
+
+    # Meena (Pisces)
+    "సో": [{"Letters": ["సో"], "Rashi": "Meena (Pisces)", "Nakshatram": "Purvabhadra (3–4 padams)"}],
+    "ద": [
+        {"Letters": ["దా", "ది"], "Rashi": "Meena (Pisces)", "Nakshatram": "Uttarabhadra"},
+        {"Letters": ["దు", "దే", "దో"], "Rashi": "Meena (Pisces)", "Nakshatram": "Revati"}
+    ],
+    "హ": [
+    {"Letters": ["హ"], "Rashi": "Mithuna (Gemini)", "Nakshatram": "Punarvasu (4th padam)"}
+]
+}
 
 # Multipliers and divisors
 mul = {
