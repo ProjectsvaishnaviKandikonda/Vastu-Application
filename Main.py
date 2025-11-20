@@ -121,7 +121,7 @@ with st.form("input_form"):
     with c1:
         village_letter = st.selectbox("🏡 గ్రామం మొదటి అక్షరం", list(telugu_letters.keys()))
     with c2:
-        person_letter = st.selectbox("👤 వ్యక్తి పేరు మొదటి అక్షరం", list(letter_range_rashi_dynamic.keys()))
+        person_letter = st.selectbox("👤 వ్యక్తి పేరు మొదటి అక్షరం", list(telugu_letters.keys()))
     with c3:
         area = st.number_input("📏 స్థల పరిమాణం (sq. ft)", min_value=1, step=1)
     with c4:
