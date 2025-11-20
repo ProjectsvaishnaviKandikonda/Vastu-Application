@@ -1,9 +1,13 @@
 import streamlit as st
 import pandas as pd
 import plotly.graph_objects as go
-from Data import telugu_letters, mul, div, CSUB, CVFMAE, meaning_map, letter_range_rashi_dynamic, good_areas
+from Data import (
+    telugu_letters, mul, div, CSUB, CVFMAE, meaning_map,
+    letter_range_rashi_dynamic, good_areas
+)
 from style import load_custom_styles
 
+# Load custom CSS styles
 load_custom_styles()
 
 # -----------------------------
@@ -11,7 +15,6 @@ load_custom_styles()
 # -----------------------------
 st.set_page_config(page_title="🛕 తెలుగు వాస్తు షోడశవర్గులు", layout="wide")
 st.markdown('<div class="main-title">🛕 తెలుగు వాస్తు - షోడశ వర్గాలు</div>', unsafe_allow_html=True)
-# st.title("🛕 తెలుగు వాస్తు - షోడశ వర్గాలు (Shodasha Vargas)")
 
 # -----------------------------
 # Helper Functions
@@ -50,7 +53,6 @@ def create_radar_chart_plotly(vastu_results):
     values = [vastu_results[key] for key in vastu_results.keys()]
     values += values[:1]
 
-    # Colors based on favourable/unfavourable
     colors = []
     for key in vastu_results.keys():
         meaning = meaning_map.get(key, {}).get(vastu_results[key], "")
@@ -86,21 +88,25 @@ def create_radar_chart_plotly(vastu_results):
         polar=dict(radialaxis=dict(visible=True, range=[0, max(div.values())])),
         showlegend=False,
         margin=dict(l=20, r=20, t=20, b=20),
-        height=300,
-        width=360
+        height=350,
+        width=400
     )
     return fig
 
 def get_letter_group_info(selected_letter):
-    """Returns all letters and Rashi/Nakshatram groups for the selected letter."""
+    """Returns letters, Rashi, and Nakshatram for the selected letter."""
     if selected_letter not in letter_range_rashi_dynamic:
         return []
+
     letter_groups_info = []
-    for rashi, letters in letter_range_rashi_dynamic[selected_letter].items():
+    rashi_groups = [k for k in letter_range_rashi_dynamic[selected_letter] if k != 'Nakshatram']
+    for group_name in rashi_groups:
+        letters = letter_range_rashi_dynamic[selected_letter][group_name]
+        nakshatram = letter_range_rashi_dynamic[selected_letter]['Nakshatram'][group_name]
         letter_groups_info.append({
             "Letters": ", ".join(letters),
-            "Rashi": rashi,
-            "Nakshatram": rashi
+            "Rashi": group_name,
+            "Nakshatram": nakshatram
         })
     return letter_groups_info
 
@@ -163,14 +169,7 @@ if calc:
     for key in mul.keys():
         val = vastu_results[key]
         meaning = meaning_map.get(key, {}).get(val, "—")
-
-        # Verdict
-        if "మంచిదికాదు" in meaning:
-            verdict = "మంచిదికాదు"
-        elif "మంచిది" in meaning:
-            verdict = "మంచిది"
-        else:
-            verdict = "-"
+        verdict = "మంచిదికాదు" if "మంచిదికాదు" in meaning else ("మంచిది" if "మంచిది" in meaning else "-")
 
         vastu_items.append({
             "Vastu Item": key.capitalize(),
