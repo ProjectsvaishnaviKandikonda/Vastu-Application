@@ -156,7 +156,7 @@ if calc:
     n_val = lookup_letter_value(person_letter)
     Money_Value, Expense_Value = calculate_money_expense(v_val, n_val)
 
-    st.subheader("స్థల విలువలు – ధనం & వ్యయం (గ్రామం & పేరుల ఆధారంగా)")
+    st.subheader("గ్రామంలో ఉంటే లాభమా లేక నష్టమా ?")
     table_df = pd.DataFrame({
         "Item": ["ధనం", "వ్యయం"],
         "Value": [Money_Value, Expense_Value]
@@ -181,7 +181,7 @@ if calc:
 
     vastu_df = pd.DataFrame(vastu_items)
     with col_vastu_table:
-        st.subheader("స్థల పరిమాణానికి సంబంధించిన వాస్తు ఫలితాలు")
+        st.subheader("స్థలంలో కట్టే ఇంటి కొలతలు (అడ్డము మరియు పొడవు) లెక్కించడం వల్ల వచ్చిన వాస్తు ఫలితాలు")
         st.dataframe(vastu_df.style.apply(style_vastu, axis=1))
 
     with col_radar:
