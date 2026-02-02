@@ -47,14 +47,14 @@ letter_variations = {
 # Accurate Telugu letter → Rashi/Nakshatra mapping
 letter_range_rashi_dynamic = {
     # Vowels – Mesha (Aries)
-    "అ": [{"Letters": ["అ"], "Rashi": "Mesha (Aries)", "Nakshatram": "Krittika (1st padam)"}],
-    "ఆ": [{"Letters": ["ఆ"], "Rashi": "Mesha (Aries)", "Nakshatram": "Krittika (1st padam)"}],
-    "ఇ": [{"Letters": ["ఇ"], "Rashi": "Mesha (Aries)", "Nakshatram": "Krittika (1st padam)"}],
-    "ఈ": [{"Letters": ["ఈ"], "Rashi": "Mesha (Aries)", "Nakshatram": "Krittika (1st padam)"}],
-    "ఉ": [{"Letters": ["ఉ"], "Rashi": "Mesha (Aries)", "Nakshatram": "Krittika (1st padam)"}],
+    "అ": [{"Letters": ["అ"], "Rashi": "Mesha (Aries)", "Nakshatram": "Krittika"}],
+    "ఆ": [{"Letters": ["ఆ"], "Rashi": "Mesha (Aries)", "Nakshatram": "Krittika"}],
+    "ఇ": [{"Letters": ["ఇ"], "Rashi": "Mesha (Aries)", "Nakshatram": "Krittika"}],
+    "ఈ": [{"Letters": ["ఈ"], "Rashi": "Vrishabha (Taurus)", "Nakshatram": "Krittika"}],
+    "ఉ": [{"Letters": ["ఉ"], "Rashi": "Vrishabha (Taurus)", "Nakshatram": "Krittika (1st padam)"}],
     "ఊ": [{"Letters": ["ఊ"], "Rashi": "Mesha (Aries)", "Nakshatram": "Krittika (1st padam)"}],
     "ఋ": [{"Letters": ["ఋ"], "Rashi": "Mesha (Aries)", "Nakshatram": "Krittika (2nd padam)"}],
-    "ఎ": [{"Letters": ["ఎ"], "Rashi": "Mesha (Aries)", "Nakshatram": "Krittika (2nd padam)"}],
+    "ఎ": [{"Letters": ["ఎ"], "Rashi": "Vrishabha (Taurus)", "Nakshatram": "Krittika (2nd padam)"}],
     "ఏ": [{"Letters": ["ఏ"], "Rashi": "Mesha (Aries)", "Nakshatram": "Krittika (2nd padam)"}],
     "ఐ": [{"Letters": ["ఐ"], "Rashi": "Vrishabha (Taurus)", "Nakshatram": "Rohini"}],
     "ఒ": [{"Letters": ["ఒ"], "Rashi": "Vrishabha (Taurus)", "Nakshatram": "Rohini"}],
@@ -65,9 +65,9 @@ letter_range_rashi_dynamic = {
 
     # Consonants – Mesha (Aries)
     "క": [
-        {"Letters": ["కా", "కి"], "Rashi": "Mithuna (Gemini)", "Nakshatram": "Mrigasira (3–4 padams)"},
+        {"Letters": ["కా", "కి"], "Rashi": "Mithuna (Gemini)", "Nakshatram": "Mrigasira"},
         {"Letters": ["కూ"], "Rashi": "Mithuna (Gemini)", "Nakshatram": "Arudra"},
-        {"Letters": ["కె", "కో"], "Rashi": "Mithuna (Gemini)", "Nakshatram": "Punarvasu (1–3 padams)"},
+        {"Letters": ["కె", "కో"], "Rashi": "Mithuna (Gemini)", "Nakshatram": "Punarvasu"},
     ],
     "ఖ": [{"Letters": ["ఖా", "ఖి", "ఖీ"], "Rashi": "Mithuna (Gemini)", "Nakshatram": "Arudra"}],
     "గ": [
@@ -80,10 +80,10 @@ letter_range_rashi_dynamic = {
 
     # Mesha (Aries) continued
     "చ": [{"Letters": ["చు", "చె", "చో"], "Rashi": "Mesha (Aries)", "Nakshatram": "Ashwini"}],
-    "ఛ": [{"Letters": ["ఛ"], "Rashi": "Mesha (Aries)", "Nakshatram": "Ashwini"}],
+    "ఛ": [{"Letters": ["ఛ"], "Rashi": "Mithuna (Gemini)", "Nakshatram": "Arudra"}],
     "జ": [{"Letters": ["జా", "జి"], "Rashi": "Mesha (Aries)", "Nakshatram": "Bharani"}],
     "ఝ": [{"Letters": ["ఝా", "ఝి"], "Rashi": "Mesha (Aries)", "Nakshatram": "Bharani"}],
-    "ఞ": [{"Letters": ["ఞ"], "Rashi": "Mesha (Aries)", "Nakshatram": "Bharani"}],
+    "ఞ": [{"Letters": ["ఞ"], "Rashi": "Mithuna (Gemini)", "Nakshatram": "Arudra"}],
 
     # Simha (Leo)
     "ట": [{"Letters": ["టే", "టో"], "Rashi": "Simha (Leo)", "Nakshatram": "Purva Phalguni"}],
@@ -121,10 +121,12 @@ letter_range_rashi_dynamic = {
         {"Letters": ["రా", "రి", "రు", "రే"], "Rashi": "Kanya (Virgo)", "Nakshatram": "Hasta"},
         {"Letters": ["రో"], "Rashi": "Kanya (Virgo)", "Nakshatram": "Chitra (1st padam)"}
     ],
-    "ల": [{"Letters": ["లా", "లి", "లూ", "లే", "లో"], "Rashi": "Mesha (Aries)", "Nakshatram": "Bharani"}],
+    "ల": [
+        {"Letters": ["లి", "లూ", "లే", "లో"], "Rashi": "Mesha (Aries)", "Nakshatram": "Bharani"},
+        {"Letters": ["లా"], "Rashi": "Mesha (Aries)", "Nakshatram": "Ashwini"}]
     "వ": [
-        {"Letters": ["వొ", "వా", "వి", "వు"], "Rashi": "Vrishabha (Taurus)", "Nakshatram": "Rohini"},
-        {"Letters": ["వే", "వో"], "Rashi": "Vrishabha (Taurus)", "Nakshatram": "Mrigasira (1–2 padams)"}
+        {"Letters": ["వా", "వి", "వు"], "Rashi": "Vrishabha (Taurus)", "Nakshatram": "Rohini"},
+        {"Letters": ["వే", "వో", "వొ"], "Rashi": "Vrishabha (Taurus)", "Nakshatram": "Mrigasira"}
     ],
 
     # Kumbha (Aquarius)
