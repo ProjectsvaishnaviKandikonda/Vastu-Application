@@ -137,7 +137,9 @@ letter_range_rashi_dynamic = {
     "సో": [{"Letters": ["సో"], "Rashi": "Meena (Pisces)", "Nakshatram": "Purvabhadra (3–4 padams)"}],
 
     # Meena (Pisces)
-    "హ": [{"Letters": ["హ"], "Rashi": "Mithuna (Gemini)", "Nakshatram": "Punarvasu (4th padam)"}],
+    "హ": [
+        {"Letters": ["హ"], "Rashi": "Mithuna (Gemini)", "Nakshatram": "Punarvasu"},
+        {"Letters": ["హి"], "Rashi": "Mithuna (Gemini)", "Nakshatram": "Punarvasu"}],
     "ళ": [{"Letters": ["ళ"], "Rashi": "Meena (Pisces)", "Nakshatram": "Revati"}],
     "క్ష": [{"Letters": ["క్ష"], "Rashi": "Meena (Pisces)", "Nakshatram": "Revati"}],
 }
